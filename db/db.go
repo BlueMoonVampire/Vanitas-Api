@@ -4,16 +4,16 @@ import (
 	"context"
 	"syl-api/types"
 	"time"
-
+	"os"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
-	// "go.mongodb.org/mongo-driver/mongo/options"
+	
 )
 
 var Client *mongo.Collection
 
-var DB_URL string = ""
+var DB_URL string = os.Getenv("DB_URL")
 
 func GetUser(id int) (*types.User, error) {
 	var Ctx, _ = context.WithTimeout(context.Background(), 10*time.Second)
