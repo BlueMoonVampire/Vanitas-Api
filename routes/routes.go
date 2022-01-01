@@ -25,7 +25,7 @@ func Get_User(c *gin.Context) {
 				"reason":   result.Reason,
 				"enforcer": result.Enforcer,
 				"message":  result.Message,
-				"banned":   true,
+				"blacklisted":   true,
 			},
 		)
 	}
