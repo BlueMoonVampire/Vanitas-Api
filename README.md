@@ -1,5 +1,7 @@
 # Sylviorus-Api
 
+**Star The Repo If You Like It**
+
 # How to install and run
 
 ```
@@ -10,3 +12,4 @@ cd api
 go run main.go
 
 ```
+
