@@ -1,7 +1,7 @@
 package main
 
 import (
-	"syl-api/bot"
+// 	"syl-api/bot"
 	"syl-api/db"
 	"syl-api/routes"
 
@@ -15,6 +15,6 @@ func main() {
 
 	r.GET("/user/:user", routes.Get_User)
 	r.GET("/", routes.Home)
-	bot.BotInit()
+// 	bot.BotInit()
 	r.Run()
 }
