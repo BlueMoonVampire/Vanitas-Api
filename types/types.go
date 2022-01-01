@@ -8,5 +8,5 @@ type User struct {
 	Reason   string             `json:"reason,omitempty" bson:"reason,omitempty"`
 	Enforcer int                `json:"enforcer" bson:"enforcer"`
 	Message  string             `json:"message,omitempty" bson:"message,omitempty"`
-	// Banned   bool               `json:"bl,omitempty" bson:"banned,omitempty"`
+	Blacklisted   bool          `json:"blacklisted,omitempty" bson:"blacklisted,omitempty"`
 }
