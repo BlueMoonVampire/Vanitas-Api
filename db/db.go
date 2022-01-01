@@ -8,16 +8,24 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
+	// "go.mongodb.org/mongo-driver/mongo/options"
 )
 
-var Client *mongo.Client
+var Client *mongo.Collection
 
 var DB_URL string = ""
 
 func GetUser(id int) (*types.User, error) {
+	var Ctx, _ = context.WithTimeout(context.Background(), 10*time.Second)
 	var user types.User
-	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
-	Client, _ = mongo.Connect(ctx, options.Client().ApplyURI(DB_URL))
-	err := Client.Database("Sylviorus").Collection("Main").FindOne(ctx, bson.M{"user": id}).Decode(&user)
+
+	err := Client.FindOne(Ctx, bson.M{"user": id}).Decode(&user)
 	return &user, err
+}
+
+func Database() {
+	var Ctx, _ = context.WithTimeout(context.Background(), 10*time.Second)
+	k, _ := mongo.Connect(Ctx, options.Client().ApplyURI(DB_URL))
+	Client = k.Database("Sylviorus").Collection("Main")
+
 }
