@@ -10,7 +10,8 @@ import (
 func main() {
 
 	r := gin.Default()
-	r.Static("/" , "/templates/index.html")
+	r.LoadHTMLGlob("templates/*")
+	r.GET("/" , routes.Home)
 	db.Database()
 
 // 	r.GET("/user/:user", routes.Get_User)
