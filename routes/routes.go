@@ -33,7 +33,7 @@ func Get_User(c *gin.Context) {
 }
 
 func Home(c *gin.Context) {
-	c.Html(
+	c.HTML(
 		200,
 		"index.html",
 		nil,
