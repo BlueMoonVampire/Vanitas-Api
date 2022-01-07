@@ -31,13 +31,23 @@ func Get_User(c *gin.Context) {
 	}
 
 }
+
+// func Home(c *gin.Context) {
+// 	c.JSON(
+// 		200,
+// 		gin.H{
+// 			"message": "Welcome to the Syl API",
+// 			"version": "1.0.0",
+// 			"routes":  []string{"/user/:user", "/"},
+// 		},
+// 	)
+// }
+
 func Home(c *gin.Context) {
-	c.JSON(
+
+	c.HTML(
 		200,
-		gin.H{
-			"message": "Welcome to the Syl API",
-			"version": "1.0.0",
-			"routes":  []string{"/user/:user", "/"},
-		},
+		"index.html",
+		nil,
 	)
 }
