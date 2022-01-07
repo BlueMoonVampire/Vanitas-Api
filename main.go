@@ -1,7 +1,6 @@
 package main
 
 import (
-// 	"syl-api/bot"
 	"syl-api/db"
 	"syl-api/routes"
 
@@ -11,11 +10,10 @@ import (
 func main() {
 
 	r := gin.Default()
-	r.LoadHTMLGlob("templates/*.html")
+	r.LoadHTMLGlob("templates/**/*.html")
 	db.Database()
 
 	r.GET("/user/:user", routes.Get_User)
 	r.GET("/", routes.Home)
-// 	bot.BotInit()
 	r.Run()
 }
