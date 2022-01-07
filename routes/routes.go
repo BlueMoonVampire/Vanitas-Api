@@ -33,10 +33,18 @@ func Get_User(c *gin.Context) {
 }
 
 func Home(c *gin.Context) {
-	c.HTML(
+	c.JSOB(
 		200,
-		"index.html",
-		nil,
+		gin.H{
+			
+		"message": "Welcome to the Syl API",
+		"routes": [
+			"/user/:user",
+			"/"
+		],
+		"version": "1.0.0"
 		
-	)
+		},
+		
+	)	
 }
