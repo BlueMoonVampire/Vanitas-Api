@@ -14,6 +14,6 @@ func main() {
 	db.Database()
 
 	r.GET("/user/:user", routes.Get_User)
-	r.GET("/", routes.Home)
+// 	r.GET("/", routes.Home)
 	r.Run()
 }
