@@ -33,7 +33,7 @@ func Get_User(c *gin.Context) {
 }
 
 func Home(c *gin.Context) {
-	c.JSOB(
+	c.JSON(
 		200,
 		gin.H{
 			
