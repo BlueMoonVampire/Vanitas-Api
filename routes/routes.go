@@ -2,7 +2,7 @@ package routes
 
 import (
 	"strconv"
-	"syl-api/db"
+	"vanitas-api/db"
 
 	"github.com/gin-gonic/gin"
 )
@@ -36,7 +36,7 @@ func Home(c *gin.Context) {
 	c.JSON(
 		200,
 		gin.H{
-			"message": "Welcome to the Syl API",
+			"message": "Welcome to the Vanitas API",
 			"version": "1.0.0",
 			"routes":  []string{"/user/:user", "/"},
 		},
