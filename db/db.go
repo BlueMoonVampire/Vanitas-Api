@@ -2,7 +2,7 @@ package db
 
 import (
 	"context"
-	"syl-api/types"
+	"vanitas-api/types"
 	"time"
 	"os"
 	"go.mongodb.org/mongo-driver/bson"
@@ -26,6 +26,6 @@ func GetUser(id int) (*types.User, error) {
 func Database() {
 	var Ctx, _ = context.WithTimeout(context.Background(), 10*time.Second)
 	k, _ := mongo.Connect(Ctx, options.Client().ApplyURI(DB_URL))
-	Client = k.Database("Sylviorus").Collection("Main")
+	Client = k.Database("Vanitas").Collection("Main")
 
 }
